@@ -92,12 +92,12 @@ public class MonsterBehaviour : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        ennemieCharacter.transform.position = new Vector3(playerCharacter.transform.position.x - 5, playerCharacter.transform.position.y - 0.5f, -5);
+        ennemieCharacter.transform.position = new Vector2(playerCharacter.transform.position.x , playerCharacter.transform.position.y - 0.5f);
     }
 
     #endregion
 
-    #region Public Methods
+    /*#region Public Methods
 
 
     /// <summary>
@@ -148,5 +148,5 @@ public class MonsterBehaviour : MonoBehaviour
     }
 
     #endregion
-
+    */
 }

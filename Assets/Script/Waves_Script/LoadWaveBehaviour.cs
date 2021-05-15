@@ -1,22 +1,23 @@
 ﻿//Using Unity System
 using UnityEngine;
 
-public class DeleteWaveBehzviour : MonoBehaviour
+//Script for the load the wave 
+public class LoadWaveBehaviour : MonoBehaviour
 {
+
     #region Private Methods
 
     /// <summary>
-    /// 
+    /// reference for the load the wave 
     /// </summary>
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("WavePoint"))
         {
-           Destroy( GameObject.FindWithTag("Wave"));
+            GameObject.Find("StartWavePoint").GetComponent<WaveSpawnBehaviour>().SpawnWaves(); 
         }
     }
 
     #endregion
-
 }

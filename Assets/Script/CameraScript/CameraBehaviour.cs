@@ -9,7 +9,7 @@ public class CameraBehaviour : MonoBehaviour
     /// <summary>
     /// Reference of the Character
     /// </summary>
-    public GameObject Character;
+    private Transform CharacterPosition;
 
     #endregion
 
@@ -20,7 +20,7 @@ public class CameraBehaviour : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-       
+        CharacterPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
 
@@ -29,7 +29,7 @@ public class CameraBehaviour : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        transform.position = new Vector3(Character.transform.position.x + 5.0f, 0, -10);
+        transform.position = new Vector3(CharacterPosition.position.x + 6.0f, 0, -10);
     }
 
     #endregion

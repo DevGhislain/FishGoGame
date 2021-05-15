@@ -13,11 +13,12 @@ public class CoinsBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject CoinsGameObject;
 
+
     /// <summary>
     /// Reference of the GameObject for the Coins 
     /// </summary>
-    //[SerializeField]
-    //private TextMeshProUGUI UICoinsValueText;
+    [SerializeField]
+    private TextMeshProUGUI UICoinsValueText;
 
     /// <summary>
     /// Reference of the Value for the Coins 
@@ -28,8 +29,8 @@ public class CoinsBehaviour : MonoBehaviour
     /// <summary>
     /// Reference of the Animator 
     /// </summary>
-    //[SerializeField]
-    //Animator animator;
+    [SerializeField]
+    Animator animator;
 
     #endregion
 
@@ -38,12 +39,14 @@ public class CoinsBehaviour : MonoBehaviour
     /// <summary>
     /// Reference of the coins againt 
     /// </summary>
-    private int CoinsValue;
+    private int coinsValue;
+
 
     /// <summary>
-    /// Reference of the coins againt 
+    /// Reference of the coins best score 
     /// </summary>
-    //private int coinsAmountBest = 5;
+    private int coinsAmountBest;
+
 
     #endregion
 
@@ -54,9 +57,7 @@ public class CoinsBehaviour : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-
-      //  UICoinsValueText = GameObject.Find("UI_Coins_Amount_Value").GetComponent<TextMeshProUGUI>();
-
+        UICoinsValueText = GameObject.FindGameObjectWithTag("CoinsAmount").GetComponent<TextMeshProUGUI>();
     }
 
     #endregion
@@ -72,23 +73,23 @@ public class CoinsBehaviour : MonoBehaviour
         if (collisionEnterCoins2D.gameObject.CompareTag("Player"))
         {
 
-            CoinsGameObject.SetActive(false);
+            //CoinsGameObject.SetActive(false);
 
-           /* CoinsValue = int.Parse(UICoinsValueText.text) + valueOfCoins;
-            PlayerPrefs.SetInt("CoinsAmount", CoinsValue);
-            UICoinsValueText.text = CoinsValue.ToString();
+            coinsValue = int.Parse(UICoinsValueText.text) + valueOfCoins;
+            PlayerPrefs.SetInt("CoinsAmount", coinsValue);
+            UICoinsValueText.text = coinsValue.ToString();
 
-            if (animator != null)
+           if (animator != null)
             {
                 animator.SetBool("IsCollect", true);
             }
             coinsAmountBest = PlayerPrefs.GetInt("CoinsAmountBest");
-            if (CoinsValue > coinsAmountBest)
-            {
-                coinsAmountBest = CoinsValue;
+            if (coinsValue > coinsAmountBest)
+            {  
+                coinsAmountBest = coinsValue;
                 PlayerPrefs.SetInt("CoinsAmountBest", coinsAmountBest);
             }
-          */
+          
         }
     }
 

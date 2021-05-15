@@ -19,6 +19,12 @@ public class CharacterBehaviour : MonoBehaviour
     [SerializeField]
     private float vulnerabilityTime = 5.5f;
 
+    /// <summary>
+    /// Reference of the Animator 
+    /// </summary>
+    [SerializeField]
+    Animator animator;
+
     #endregion
 
 
@@ -133,7 +139,7 @@ public class CharacterBehaviour : MonoBehaviour
         }
     }
 
- /*  /// <summary>
+   /// <summary>
     /// Reference of the OnCollisionExit2D for the Obstacle
     /// </summary>
     /// <param name="collision"></param>
@@ -141,8 +147,9 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-           // StartCoroutine(GetObstacle());
+           StartCoroutine(GetObstacle());
         }
+   
     }
 
     /// <summary>
@@ -152,21 +159,24 @@ public class CharacterBehaviour : MonoBehaviour
   IEnumerator GetObstacle()
     {
         // Stop the the player
-       // yield return new WaitForSeconds(0.1f);
-      //  SetVelocity(speedForCharacter / 2, 0);
+        animator.SetBool("IsDear", true);
+        GameControllerScriptBehaviour.health -= 1;
+        yield return new WaitForSeconds(0.1f);
+       SetVelocity(speedForCharacter / 2, 0);
 
         //Attack for the Monster
         //GameObject.FindWithTag("Monster").GetComponent<MonsterBehaviour>().GoCloser();
 
         // start the player
-        //yield return new WaitForSeconds(0.5f);
-        //SetVelocity(speedForCharacter, 0);
+        yield return new WaitForSeconds(0.5f);
+        SetVelocity(speedForCharacter, 0);
+        animator.SetBool("IsDear", false);
 
         // No Attack for the Monster
         //yield return new WaitForSeconds(vulnerabilityTime);
-       // GameObject.FindWithTag("Monster").GetComponent<MonsterBehaviour>().GoFurther();
+        // GameObject.FindWithTag("Monster").GetComponent<MonsterBehaviour>().GoFurther();
 
     }
-   */
+   
     #endregion
 }
