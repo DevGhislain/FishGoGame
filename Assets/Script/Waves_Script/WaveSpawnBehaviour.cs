@@ -34,7 +34,7 @@ public class WaveSpawnBehaviour : MonoBehaviour
     {
         if (Waves.Length != 0)
         { 
-            Instantiate(Waves[Random.Range(0, Waves.Length)], new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
+            Instantiate(Waves[Random.Range(0, Waves.Length)], new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
         }
     }
 

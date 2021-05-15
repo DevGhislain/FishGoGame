@@ -22,9 +22,9 @@ public class WavaSystemeMouvementBehaviour : MonoBehaviour
     /// <summary>
     /// Method principale for the Update
     /// </summary>
-    private void Update()
+    private void Update() 
     {
-        transform.position = new Vector3(CharacterPosition.transform.position.x , 0, -10);
+        transform.position = new Vector3(CharacterPosition.transform.position.x, 0, -10);
     }
 
     #endregion

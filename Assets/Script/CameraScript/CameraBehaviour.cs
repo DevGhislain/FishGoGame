@@ -23,13 +23,21 @@ public class CameraBehaviour : MonoBehaviour
         CharacterPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
+    /// <summary>
+    /// void of the start in my game
+    /// </summary>
+     void Start()
+    {
+        var cam = GetComponent<Camera>();
+        cam.aspect = 1024f / 600f;
+    }
 
     /// <summary>
     /// Method principale for the Update
     /// </summary>
     private void Update()
     {
-        transform.position = new Vector3(CharacterPosition.position.x + 6.0f, 0, -10);
+        transform.position = new Vector3(CharacterPosition.position.x + 6f, 0, -10);
     }
 
     #endregion
