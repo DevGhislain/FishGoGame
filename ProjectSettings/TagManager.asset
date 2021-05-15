@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Platform
   - platform
+  - CoinsAmount
+  - Obstacle
+  - WavePoint
+  - Wave
   layers:
   - Default
   - TransparentFX
