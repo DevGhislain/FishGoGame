@@ -603,6 +603,7 @@ MonoBehaviour:
   Waves:
   - {fileID: 2202919707332524367, guid: 06d458a00ae474bca959341f1a40aee3, type: 3}
   - {fileID: 2202919707332524367, guid: 8fc0405a93fad4d6cbff6fbfe02101d7, type: 3}
+  - {fileID: 2202919707332524367, guid: 2e98b6eb740f245b2bbcbef6a43dbb42, type: 3}
 --- !u!1 &772015967 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6242932013967438786, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
