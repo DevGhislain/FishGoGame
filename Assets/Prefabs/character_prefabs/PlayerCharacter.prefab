@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3247935931665415908}
   m_LocalRotation: {x: -0, y: 0.050988797, z: -0, w: 0.99869925}
   m_LocalPosition: {x: -4.231821, y: -0.201847, z: 0.15434751}
-  m_LocalScale: {x: 1.7012278, y: 1.2838621, z: 1.0066049}
+  m_LocalScale: {x: 1.701228, y: 1.2838621, z: 1.006605}
   m_Children: []
   m_Father: {fileID: 3247935932461051042}
   m_RootOrder: 1
@@ -92,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3247935932114574860}
   - component: {fileID: 3247935932114574863}
+  - component: {fileID: 2115914886}
   m_Layer: 0
   m_Name: Planche
   m_TagString: Untagged
@@ -107,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3247935932114574861}
   m_LocalRotation: {x: -0, y: 0.050988797, z: -0, w: 0.99869925}
-  m_LocalPosition: {x: -0.13238275, y: -0.5024688, z: 0.00015425833}
+  m_LocalPosition: {x: -0.13238275, y: -0.543, z: 0.00015425833}
   m_LocalScale: {x: 1.7012278, y: 1.2838621, z: 1.0066049}
   m_Children: []
   m_Father: {fileID: 3247935932461051042}
@@ -164,6 +165,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2115914886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3247935932114574861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93abe830b92cc48e3b17a9b2b1e38265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3247935932461051043
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +279,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.022595644}
+  m_Offset: {x: 0, y: 0.088167876}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -277,7 +290,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.76, y: 1.3648088}
+  m_Size: {x: 3.76, y: 1.2336643}
   m_EdgeRadius: 0
 --- !u!50 &3247935932461051044
 Rigidbody2D:
@@ -314,8 +327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 3247935932461051044}
   vulnerabilityTime: 5.5
-  animator: {fileID: 0}
-  speedForCharacter: 5
+  animator: {fileID: 2466676082308020029}
+  speedForCharacter: 0
   MaxJump: 7
 --- !u!95 &2466676082308020029
 Animator:
@@ -361,8 +374,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3247935932584641604}
   m_LocalRotation: {x: -0, y: 0.050988797, z: -0, w: 0.99869925}
-  m_LocalPosition: {x: -5.6154485, y: 0.16963674, z: 0.20639026}
-  m_LocalScale: {x: 1.7012278, y: 1.2838621, z: 1.0066049}
+  m_LocalPosition: {x: -5.615448, y: 0.16963674, z: 0.2063903}
+  m_LocalScale: {x: 1.701228, y: 1.2838621, z: 1.006605}
   m_Children: []
   m_Father: {fileID: 3247935932461051042}
   m_RootOrder: 2
