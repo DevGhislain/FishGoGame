@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: speedForCharacter
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3247935932461051046, guid: 7a225395a95fe402e923d3a5e48520b6, type: 3}
+      propertyPath: valueAccelity
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a225395a95fe402e923d3a5e48520b6, type: 3}
 --- !u!1 &372646309
@@ -543,6 +547,7 @@ MonoBehaviour:
   - {fileID: 2202919707332524367, guid: 06d458a00ae474bca959341f1a40aee3, type: 3}
   - {fileID: 2202919707332524367, guid: 8fc0405a93fad4d6cbff6fbfe02101d7, type: 3}
   - {fileID: 2202919707332524367, guid: 2e98b6eb740f245b2bbcbef6a43dbb42, type: 3}
+  - {fileID: 2202919707332524367, guid: b2fd2b7406d4644fe85de4194a135c24, type: 3}
 --- !u!1 &772015967 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6242932013967438786, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
