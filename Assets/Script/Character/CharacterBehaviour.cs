@@ -72,13 +72,20 @@ public class CharacterBehaviour : MonoBehaviour
     /// Reference of the speed Character
     /// </summary>
     ///Use the serielzefield
-    public float speedForCharacter;
+    public float speedForCharacter = 5;
 
     /// <summary>
     /// Reference of the speed Character
     /// </summary>
     ///Use the serielzefield
     public float MaxJump;
+
+    #endregion
+
+    #region Private members
+
+    [SerializeField]
+    private int valueAccelity = 100;
 
     #endregion
 
@@ -90,7 +97,6 @@ public class CharacterBehaviour : MonoBehaviour
     private void Start()
     {
         SetVelocity(speedForCharacter, 0);
-        
     }
 
     /// <summary>
@@ -101,7 +107,12 @@ public class CharacterBehaviour : MonoBehaviour
         if (Input.GetKeyDown("space") && IsGrounded )
         {
             JumpCharacter(MaxJump);  
-        } 
+        }
+        if (CoinsBehaviour.coinsValue >= valueAccelity)
+        {
+            valueAccelity += 50;
+            speedForCharacter += 1;
+        }
     }
 
     #endregion
@@ -139,7 +150,7 @@ public class CharacterBehaviour : MonoBehaviour
         }
     }
 
-   /// <summary>
+    /// <summary>
     /// Reference of the OnCollisionExit2D for the Obstacle
     /// </summary>
     /// <param name="collision"></param>

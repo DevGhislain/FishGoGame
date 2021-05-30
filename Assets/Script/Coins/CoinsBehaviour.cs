@@ -32,21 +32,19 @@ public class CoinsBehaviour : MonoBehaviour
     [SerializeField]
     Animator animator;
 
+    /// <summary>
+    /// Reference of the coins againt 
+    /// </summary>
+    public static int coinsValue;
+
     #endregion
 
     #region Private Members
 
     /// <summary>
-    /// Reference of the coins againt 
-    /// </summary>
-    private int coinsValue;
-
-
-    /// <summary>
     /// Reference of the coins best score 
     /// </summary>
     private int coinsAmountBest;
-
 
     #endregion
 
