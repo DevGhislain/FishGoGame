@@ -13,6 +13,13 @@ public class CharacterBehaviour : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rigidbody2D;
 
+
+
+    /// <summary>
+    /// Reference of the new Level in game 
+    /// </summary>
+    public static int newLevel = 1;
+
     /// <summary>
     /// Reference of the vulnerability for the character 
     /// </summary>
@@ -92,10 +99,20 @@ public class CharacterBehaviour : MonoBehaviour
     #region Method for the Unity
 
     /// <summary>
+    /// 
+    /// </summary>
+     private void Awake()
+     {
+         
+     }
+
+    /// <summary>
     /// Get the first method for Update
     /// </summary>
     private void Start()
     {
+        newLevel = 0;
+        speedForCharacter = 6f;
         SetVelocity(speedForCharacter, 0);
     }
 
@@ -106,13 +123,17 @@ public class CharacterBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown("space") && IsGrounded )
         {
-            JumpCharacter(MaxJump);  
+            JumpCharacter(MaxJump);
         }
-        if (CoinsBehaviour.coinsValue >= valueAccelity)
+        if (CoinsBehaviour.coinsValue >= valueAccelity && IsGrounded)
         {
-            valueAccelity += 50;
-            speedForCharacter += 1;
+            valueAccelity += 100;
+            speedForCharacter += 0.5f;
+            SetVelocity(speedForCharacter, 0);
+            newLevel += 1;
+            ShowNewLevelBehaviour.show = true;
         }
+
     }
 
     #endregion

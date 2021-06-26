@@ -888,18 +888,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 374903737753212165, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948510048296935048, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
+      propertyPath: m_text
+      value: Level 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6242932013728320364, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 372646310}
-    - target: {fileID: 6242932013728320364, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
-      propertyPath: m_PixelPerfect
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242932013728320365, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6242932013728320367, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -987,34 +987,6 @@ PrefabInstance:
     - target: {fileID: 6242932013728320371, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242932014573214010, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
-      propertyPath: m_fontSize
-      value: 72.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242932014573214010, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
-      propertyPath: m_fontSizeMax
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242932014573214010, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242932014573214010, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242932014573214011, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 143.63498
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242932014573214011, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.000020981
-      objectReference: {fileID: 0}
-    - target: {fileID: 6242932014573214011, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 76.91179
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 707d72e87429f4499adf01bec6984d7d, type: 3}
