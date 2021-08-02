@@ -57,8 +57,8 @@ public class ShowNewLevelBehaviour : MonoBehaviour
     IEnumerator showTheLevel(int _newLevel)
     {
         string txt = "Level " + _newLevel;
-     
-       panelShowLevel.SetActive(true);
+
+        panelShowLevel.SetActive(true);
         yield return new WaitForSeconds(3f);
         LevelText.text = txt;
         panelShowLevel.SetActive(false);

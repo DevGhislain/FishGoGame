@@ -13,8 +13,6 @@ public class CharacterBehaviour : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rigidbody2D;
 
-
-
     /// <summary>
     /// Reference of the new Level in game 
     /// </summary>
@@ -111,7 +109,7 @@ public class CharacterBehaviour : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        newLevel = 0;
+        newLevel = 1;
         speedForCharacter = 6f;
         SetVelocity(speedForCharacter, 0);
     }

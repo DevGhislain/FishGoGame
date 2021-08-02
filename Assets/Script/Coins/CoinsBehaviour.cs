@@ -53,6 +53,14 @@ public class CoinsBehaviour : MonoBehaviour
     /// <summary>
     /// Get the first method for Update
     /// </summary>
+    private void Start()
+    {
+        coinsValue = 0; 
+    }
+
+    /// <summary>
+    /// Get the first method for Update
+    /// </summary>
     private void Awake()
     {
         UICoinsValueText = GameObject.FindGameObjectWithTag("CoinsAmount").GetComponent<TextMeshProUGUI>();
