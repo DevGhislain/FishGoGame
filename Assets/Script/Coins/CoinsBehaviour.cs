@@ -20,6 +20,13 @@ public class CoinsBehaviour : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI UICoinsValueText;
 
+
+    /// <summary>
+    /// Reference of the GameObject for Coins Audio
+    /// </summary>
+    [SerializeField]
+    private GameObject coinAudio;
+
     /// <summary>
     /// Reference of the Value for the Coins 
     /// </summary>
@@ -46,6 +53,11 @@ public class CoinsBehaviour : MonoBehaviour
     /// </summary>
     private int coinsAmountBest;
 
+    /// <summary>
+    /// Reference of Audio Source for the coins Value
+    /// </summary>
+    private AudioSource coinsAudioValue;
+
     #endregion
 
     #region Public Accessor Unity
@@ -64,6 +76,8 @@ public class CoinsBehaviour : MonoBehaviour
     private void Awake()
     {
         UICoinsValueText = GameObject.FindGameObjectWithTag("CoinsAmount").GetComponent<TextMeshProUGUI>();
+
+         coinsAudioValue = GameObject.FindGameObjectWithTag("CoinsSound").GetComponent<AudioSource>();
     }
 
     #endregion
@@ -79,9 +93,10 @@ public class CoinsBehaviour : MonoBehaviour
         if (collisionEnterCoins2D.gameObject.CompareTag("Player"))
         {
 
-            //CoinsGameObject.SetActive(false);
+            // play the audio sound for the Coins
+            coinsAudioValue.Play(0);
 
-            coinsValue = int.Parse(UICoinsValueText.text) + valueOfCoins;
+           coinsValue = int.Parse(UICoinsValueText.text) + valueOfCoins;
             PlayerPrefs.SetInt("CoinsAmount", coinsValue);
             UICoinsValueText.text = coinsValue.ToString();
 

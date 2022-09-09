@@ -28,6 +28,17 @@ public class GameControllerScriptBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject uiReplayPanel, uiMenuPanel, pauseUIPanel;
 
+
+    /// <summary>
+    /// Reference of Audio Source for the coins Value
+    /// </summary>
+    private AudioSource backgroundAudioValue;
+
+    /// <summary>
+    /// Reference of Audio Source for the coins Value
+    /// </summary>
+    private AudioSource loseAudioValue;
+
     #endregion
 
     #region Public Accessor Unity
@@ -47,6 +58,9 @@ public class GameControllerScriptBehaviour : MonoBehaviour
         hearth3.SetActive(true);
         hearth4.SetActive(true);
         gameOver.SetActive(false);
+
+        backgroundAudioValue = GameObject.FindGameObjectWithTag("BackgroudSound").GetComponent<AudioSource>();
+        loseAudioValue = GameObject.FindGameObjectWithTag("LoseSound").GetComponent<AudioSource>();
     }
 
 
@@ -97,7 +111,8 @@ public class GameControllerScriptBehaviour : MonoBehaviour
                 hearth3.SetActive(false);
                 hearth4.SetActive(false);
                 gameOver.SetActive(true);
-                Time.timeScale = 0;
+
+                loseAudioValue.Play(0);
                 ShowTheUIMenuGameOver();
                 break;
 
@@ -113,12 +128,29 @@ public class GameControllerScriptBehaviour : MonoBehaviour
     /// </summary>
     void ShowTheUIMenuGameOver()
     {
+        // play the audio sound for the Background
+        backgroundAudioValue.Stop();
         uiReplayPanel.SetActive(true);
         uiMenuPanel.SetActive(true);
         pauseUIPanel.SetActive(false);
+        Time.timeScale = 0;
+
+        //StartCoroutine(MethodsForThPlayTheLoseSound());
+    }
+
+
+    /// <summary>
+    /// Method for enabled the panel
+    /// </summary>
+    /// <param name="_newLevel"></param>
+    /// <returns></returns>
+    IEnumerator MethodsForThPlayTheLoseSound()
+    {
+
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0;
     }
 
   
-
     #endregion
 }

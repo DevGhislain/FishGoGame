@@ -35,18 +35,21 @@ public class CharacterBehaviour : MonoBehaviour
 
     #region Private Members
 
-
-
     /// <summary>
     /// Reference for the character if is grounded
     /// </summary>
     private bool IsGrounded = false;
 
+    /// <summary>
+    /// Reference of Audio Source for the Jump Value
+    /// </summary>
+    private AudioSource jumpAudioValue;
+
     #endregion
 
     #region Public Membres
 
-   /// <summary>
+    /// <summary>
     ///  Get the reference for the rigidbody for the character
     /// </summary>
     public Rigidbody2D rbd2D
@@ -101,8 +104,8 @@ public class CharacterBehaviour : MonoBehaviour
     /// </summary>
      private void Awake()
      {
-         
-     }
+        jumpAudioValue = GameObject.FindGameObjectWithTag("JumpSound").GetComponent<AudioSource>();
+    }
 
     /// <summary>
     /// Get the first method for Update
@@ -143,6 +146,9 @@ public class CharacterBehaviour : MonoBehaviour
     /// </summary>
    public void JumpCharacter(float _valueJumpe)
     {
+        // play the audio sound for the Jump
+        jumpAudioValue.Play(0);
+
         rigidbody2D.velocity += new Vector2(0, _valueJumpe);
         IsGrounded = false;
     }

@@ -10,6 +10,10 @@ TagManager:
   - Obstacle
   - WavePoint
   - Wave
+  - CoinsSound
+  - JumpSound
+  - BackgroudSound
+  - LoseSound
   layers:
   - Default
   - TransparentFX
