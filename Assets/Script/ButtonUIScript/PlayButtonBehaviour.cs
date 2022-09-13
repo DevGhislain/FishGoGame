@@ -20,7 +20,7 @@ public class PlayButtonBehaviour : MonoBehaviour
     /// Reference of the GameObject for the UI panel 
     /// </summary>
     [SerializeField]
-    private GameObject uIPlayPanel, uIReplayPanel, uIMenuPanel;
+    private GameObject uIMenuPanel;
 
     #endregion
 
@@ -55,10 +55,7 @@ public class PlayButtonBehaviour : MonoBehaviour
     void PlayGame()
     {
         Time.timeScale = 1;
-        uIPlayPanel.SetActive(false);
-        uIReplayPanel.SetActive(false);
         uIMenuPanel.SetActive(false);
-        pauselUI.SetActive(true);
     }
 
     #endregion

@@ -10,10 +10,10 @@ public class PausebuttonBehaviour : MonoBehaviour
     #region private Accessor Unity
 
     /// <summary>
-    /// Reference of the GameObject for the UI panel 
+    /// Reference of the GameObject for the UI panel menu 
     /// </summary>
     [SerializeField]
-    private GameObject uIPlayPanel, uIReplayPanel, uIMenuPanel;
+    private GameObject uIPanelMenu;
 
     /// <summary>
     /// Reference of the GameObject for the Pause panel 
@@ -30,7 +30,6 @@ public class PausebuttonBehaviour : MonoBehaviour
     /// </summary>
     private Button pauseButton;
 
-
     #endregion
 
     #region Public Accessor Unity
@@ -40,10 +39,18 @@ public class PausebuttonBehaviour : MonoBehaviour
     /// </summary>
     public void Awake()
     {
+       
         pauseButton = GetComponent<Button>();
         pauseButton.onClick.AddListener((ShowThePanelPauseButton));
     }
 
+    /// <summary>
+    /// Methods for the start the game
+    /// </summary>
+    private void Start()
+    {
+        uIPanelMenu.SetActive(false);
+    }
     #endregion
 
     #region Private Methods
@@ -54,10 +61,7 @@ public class PausebuttonBehaviour : MonoBehaviour
     void ShowThePanelPauseButton()
     {
         Time.timeScale = 0;
-        uIPlayPanel.SetActive(true);
-        uIReplayPanel.SetActive(true);
-        uIMenuPanel.SetActive(true);
-        pauselUI.SetActive(false);
+        uIPanelMenu.SetActive(true);
     }
 
     #endregion

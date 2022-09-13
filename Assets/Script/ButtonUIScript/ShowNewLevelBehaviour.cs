@@ -23,6 +23,13 @@ public class ShowNewLevelBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject panelShowLevel;
 
+
+    /// <summary>
+    /// Refernce for the Menu panel
+    /// </summary>
+    [SerializeField]
+    private GameObject panelMenu;
+
     /// <summary>
     /// Reference for the text
     /// </summary>
@@ -58,11 +65,14 @@ public class ShowNewLevelBehaviour : MonoBehaviour
     {
         string txt = "Level " + _newLevel;
 
-        panelShowLevel.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        LevelText.text = txt;
-        panelShowLevel.SetActive(false);
-        show = false;
+        if (!panelMenu.active)
+        {
+            panelShowLevel.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            LevelText.text = txt;
+            panelShowLevel.SetActive(false);
+            show = false;
+        }
     }
 
     #endregion
