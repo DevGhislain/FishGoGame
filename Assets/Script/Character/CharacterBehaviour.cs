@@ -131,8 +131,7 @@ public class CharacterBehaviour : MonoBehaviour
             valueAccelity += 100;
             speedForCharacter += 0.5f;
             SetVelocity(speedForCharacter, 0);
-            newLevel += 1;
-            ShowNewLevelBehaviour.show = true;
+             newLevel += 1;
         }
 
     }

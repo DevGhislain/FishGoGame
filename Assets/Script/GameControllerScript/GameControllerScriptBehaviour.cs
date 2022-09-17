@@ -11,7 +11,7 @@ public class GameControllerScriptBehaviour : MonoBehaviour
     /// <summary>
     /// Reference of different for live the players
     /// </summary>
-    public GameObject hearth1, hearth2, hearth3, hearth4, gameOver;
+    public GameObject hearth1, hearth2, hearth3, hearth4;
 
     /// <summary>
     /// Reference of the live of players
@@ -26,7 +26,20 @@ public class GameControllerScriptBehaviour : MonoBehaviour
     /// Reference of the UI panel
     /// </summary>
     [SerializeField]
-    private GameObject uiReplayPanel, uiMenuPanel, pauseUIPanel;
+    private GameObject uiGameOverPanel;
+
+    /// <summary>
+    /// Reference of the UI panel
+    /// </summary>
+    [SerializeField]
+    private GameObject uiLevelPanel;
+
+
+    /// <summary>
+    /// Reference of the UI pause panel
+    /// </summary>
+    [SerializeField]
+    private GameObject uiPauseButton;
 
 
     /// <summary>
@@ -57,7 +70,6 @@ public class GameControllerScriptBehaviour : MonoBehaviour
         hearth2.SetActive(true);
         hearth3.SetActive(true);
         hearth4.SetActive(true);
-        gameOver.SetActive(false);
 
         backgroundAudioValue = GameObject.FindGameObjectWithTag("BackgroudSound").GetComponent<AudioSource>();
         loseAudioValue = GameObject.FindGameObjectWithTag("LoseSound").GetComponent<AudioSource>();
@@ -80,7 +92,6 @@ public class GameControllerScriptBehaviour : MonoBehaviour
                 hearth2.SetActive(true);
                 hearth3.SetActive(true);
                 hearth4.SetActive(true);
-                gameOver.SetActive(false);
                 break;
 
             case 3:
@@ -88,21 +99,18 @@ public class GameControllerScriptBehaviour : MonoBehaviour
                 hearth2.SetActive(true);
                 hearth3.SetActive(true);
                 hearth4.SetActive(true);
-                gameOver.SetActive(false);
                 break;
             case 2:
                 hearth1.SetActive(false);
                 hearth2.SetActive(false);
                 hearth3.SetActive(true);
                 hearth4.SetActive(true);
-                gameOver.SetActive(false);
                 break;
             case 1:
                 hearth1.SetActive(false);
                 hearth2.SetActive(false);
                 hearth3.SetActive(false);
                 hearth4.SetActive(true);
-                gameOver.SetActive(false);
                 break;
 
             case 0:
@@ -110,10 +118,8 @@ public class GameControllerScriptBehaviour : MonoBehaviour
                 hearth2.SetActive(false);
                 hearth3.SetActive(false);
                 hearth4.SetActive(false);
-                gameOver.SetActive(true);
-
-                loseAudioValue.Play(0);
-                ShowTheUIMenuGameOver();
+                StartCoroutine(MethodsForGameOver());
+                //ShowTheUIMenuGameOver();
                 break;
 
         }
@@ -124,30 +130,18 @@ public class GameControllerScriptBehaviour : MonoBehaviour
     #region Priavte Methods
 
     /// <summary>
-    /// void of the show the UI menu 
-    /// </summary>
-    void ShowTheUIMenuGameOver()
-    {
-        // play the audio sound for the Background
-        backgroundAudioValue.Stop();
-        uiReplayPanel.SetActive(true);
-        uiMenuPanel.SetActive(true);
-        pauseUIPanel.SetActive(false);
-        Time.timeScale = 0;
-
-        //StartCoroutine(MethodsForThPlayTheLoseSound());
-    }
-
-
-    /// <summary>
     /// Method for enabled the panel
     /// </summary>
     /// <param name="_newLevel"></param>
     /// <returns></returns>
-    IEnumerator MethodsForThPlayTheLoseSound()
+    IEnumerator MethodsForGameOver()
     {
-
+        backgroundAudioValue.Stop();
+        uiPauseButton.SetActive(false);
+        uiLevelPanel.SetActive(false);
         yield return new WaitForSeconds(1f);
+        uiGameOverPanel.SetActive(true);
+        loseAudioValue.Play();
         Time.timeScale = 0;
     }
 

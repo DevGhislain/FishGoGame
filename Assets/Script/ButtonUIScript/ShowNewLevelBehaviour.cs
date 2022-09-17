@@ -18,38 +18,25 @@ public class ShowNewLevelBehaviour : MonoBehaviour
     #region Private Memebers unity
 
     /// <summary>
-    /// Refernce for the Panel New level
+    /// Reference for the text
     /// </summary>
     [SerializeField]
-    private GameObject panelShowLevel;
-
-
-    /// <summary>
-    /// Refernce for the Menu panel
-    /// </summary>
-    [SerializeField]
-    private GameObject panelMenu;
+    private TextMeshProUGUI LevelText;
 
     /// <summary>
     /// Reference for the text
     /// </summary>
-    private TextMeshProUGUI LevelText;
+    [SerializeField]
+    private GameObject levelTextObject;
 
     #endregion
 
     #region Priavte  Unity Memebers
 
-    private void Awake()
-    {
-        LevelText = panelShowLevel.GetComponent<TextMeshProUGUI>();
-    }
-
     private void Update()
     {
-        if (show == true)
-        {
-            StartCoroutine(showTheLevel(CharacterBehaviour.newLevel));
-        }
+      
+            showTheLevel(CharacterBehaviour.newLevel);
     }
 
     #endregion
@@ -61,18 +48,10 @@ public class ShowNewLevelBehaviour : MonoBehaviour
     /// </summary>
     /// <param name="_newLevel"></param>
     /// <returns></returns>
-    IEnumerator showTheLevel(int _newLevel)
+    void showTheLevel(int _newLevel)
     {
         string txt = "Level " + _newLevel;
-
-        if (!panelMenu.active)
-        {
-            panelShowLevel.SetActive(true);
-            yield return new WaitForSeconds(3f);
-            LevelText.text = txt;
-            panelShowLevel.SetActive(false);
-            show = false;
-        }
+        LevelText.text = txt;
     }
 
     #endregion
