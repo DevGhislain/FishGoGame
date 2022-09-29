@@ -52,6 +52,11 @@ public class GameControllerScriptBehaviour : MonoBehaviour
     /// </summary>
     private AudioSource loseAudioValue;
 
+    /// <summary>
+    /// Reference for the advs
+    /// </summary>
+    private AdvsInitialize advsManager;
+
     #endregion
 
     #region Public Accessor Unity
@@ -61,6 +66,8 @@ public class GameControllerScriptBehaviour : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        advsManager = GetComponent<AdvsInitialize>();
+
         if (Time.timeScale!=1)
         {
             Time.timeScale = 1;
@@ -123,6 +130,7 @@ public class GameControllerScriptBehaviour : MonoBehaviour
                 break;
 
         }
+ 
     }
 
     #endregion
@@ -140,9 +148,12 @@ public class GameControllerScriptBehaviour : MonoBehaviour
         uiPauseButton.SetActive(false);
         uiLevelPanel.SetActive(false);
         yield return new WaitForSeconds(1f);
+
         uiGameOverPanel.SetActive(true);
         loseAudioValue.Play();
         Time.timeScale = 0;
+
+        //advsManager.PlayTheAds();
     }
 
   
