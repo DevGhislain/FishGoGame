@@ -42,8 +42,8 @@ public class AdvsInitialize : MonoBehaviour, IUnityAdsInitializationListener, IU
         if (Advertisement.isInitialized)
         {
             Debug.Log("Advertissement is initialized");
-            LoadedRewardedAd();
-            //LoadInerstitialAd();
+            //LoadedRewardedAd();
+            LoadInerstitialAd();
         }
         else
         {
@@ -81,6 +81,7 @@ public class AdvsInitialize : MonoBehaviour, IUnityAdsInitializationListener, IU
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
     {
         Debug.Log("On Initialization Failed ");
+        InitializeAds();
     }
 
     /// <summary>
