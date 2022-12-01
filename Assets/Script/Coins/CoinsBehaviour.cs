@@ -67,18 +67,13 @@ public class CoinsBehaviour : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        coinsValue = 0; 
-    }
+        coinsValue = 0;
 
-    /// <summary>
-    /// Get the first method for Update
-    /// </summary>
-    private void Awake()
-    {
         UICoinsValueText = GameObject.FindGameObjectWithTag("CoinsAmount").GetComponent<TextMeshProUGUI>();
 
-         coinsAudioValue = GameObject.FindGameObjectWithTag("CoinsSound").GetComponent<AudioSource>();
+        coinsAudioValue = GameObject.FindGameObjectWithTag("CoinsSound").GetComponent<AudioSource>();
     }
+
 
     #endregion
 
@@ -108,6 +103,7 @@ public class CoinsBehaviour : MonoBehaviour
             if (coinsValue > coinsAmountBest)
             {  
                 coinsAmountBest = coinsValue;
+                PlayfabsManager.bestvalueAccount = coinsAmountBest;
                 PlayerPrefs.SetInt("CoinsAmountBest", coinsAmountBest);
             }
           

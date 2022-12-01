@@ -18,6 +18,13 @@ public class GameControllerScriptBehaviour : MonoBehaviour
     /// </summary>
     public static int health;
 
+
+    /// <summary>
+    /// Reference of the UI panel
+    /// </summary>
+    [SerializeField]
+    private PlayfabsManager playfabsManager;
+
     #endregion
 
     #region Public  Members
@@ -56,6 +63,7 @@ public class GameControllerScriptBehaviour : MonoBehaviour
     /// Reference for the advs
     /// </summary>
     private AdvsInitialize advsManager;
+
 
     #endregion
 
@@ -125,6 +133,7 @@ public class GameControllerScriptBehaviour : MonoBehaviour
                 hearth2.SetActive(false);
                 hearth3.SetActive(false);
                 hearth4.SetActive(false);
+
                 StartCoroutine(MethodsForGameOver());
                 //ShowTheUIMenuGameOver();
                 break;
@@ -144,11 +153,12 @@ public class GameControllerScriptBehaviour : MonoBehaviour
     /// <returns></returns>
     IEnumerator MethodsForGameOver()
     {
+
         backgroundAudioValue.Stop();
         uiPauseButton.SetActive(false);
         uiLevelPanel.SetActive(false);
+        playfabsManager.SendLeaderBoard(PlayfabsManager.bestvalueAccount);
         yield return new WaitForSeconds(1f);
-
         uiGameOverPanel.SetActive(true);
         loseAudioValue.Play();
         Time.timeScale = 0;
