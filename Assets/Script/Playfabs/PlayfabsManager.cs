@@ -71,6 +71,19 @@ public class PlayfabsManager : MonoBehaviour
         Debug.Log("SuccessFull leaderboard sent");
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="result"></param>
+    void OnLeaderBoardGet(GetLeaderboardResult result)
+    {
+        foreach (var item in result.Leaderboard)
+        {
+            Debug.Log(item.Position + " " + item.DisplayName + " " + item.PlayFabId + " " + item.StatValue);
+        };
+    }
+
+
     #endregion
 
     #region Public Methods
@@ -95,6 +108,22 @@ public class PlayfabsManager : MonoBehaviour
 
         PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnError);
     }
+
+    /// <summary>
+    /// Method for the Get LearderBoard
+    /// </summary>
+    public void GetLeaderboard()
+    {
+        var request = new GetLeaderboardRequest
+        {
+            StatisticName = "PlatformScore",
+            StartPosition = 0,
+            MaxResultsCount = 10
+        };
+        PlayFabClientAPI.GetLeaderboard(request, OnLeaderBoardGet, OnError);
+    }
+
+
 
     #endregion
 }

@@ -100,6 +100,7 @@ public class CoinsBehaviour : MonoBehaviour
                 animator.SetBool("IsCollect", true);
             }
             coinsAmountBest = PlayerPrefs.GetInt("CoinsAmountBest");
+            PlayfabsManager.bestvalueAccount = coinsValue;
             if (coinsValue > coinsAmountBest)
             {  
                 coinsAmountBest = coinsValue;

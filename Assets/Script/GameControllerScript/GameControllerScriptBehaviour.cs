@@ -157,12 +157,11 @@ public class GameControllerScriptBehaviour : MonoBehaviour
         backgroundAudioValue.Stop();
         uiPauseButton.SetActive(false);
         uiLevelPanel.SetActive(false);
-        playfabsManager.SendLeaderBoard(PlayfabsManager.bestvalueAccount);
         yield return new WaitForSeconds(1f);
         uiGameOverPanel.SetActive(true);
         loseAudioValue.Play();
         Time.timeScale = 0;
-
+        playfabsManager.SendLeaderBoard(PlayfabsManager.bestvalueAccount);
         //advsManager.PlayTheAds();
     }
 
