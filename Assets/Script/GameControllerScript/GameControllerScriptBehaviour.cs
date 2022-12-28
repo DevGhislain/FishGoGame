@@ -88,6 +88,15 @@ public class GameControllerScriptBehaviour : MonoBehaviour
 
         backgroundAudioValue = GameObject.FindGameObjectWithTag("BackgroudSound").GetComponent<AudioSource>();
         loseAudioValue = GameObject.FindGameObjectWithTag("LoseSound").GetComponent<AudioSource>();
+        if (PlayerPrefs.GetInt("AudioValue") == 1)
+        {
+          backgroundAudioValue.Play();
+        }
+        else
+        {
+            backgroundAudioValue.Stop();
+        }
+       
     }
 
 
@@ -153,18 +162,22 @@ public class GameControllerScriptBehaviour : MonoBehaviour
     /// <returns></returns>
     IEnumerator MethodsForGameOver()
     {
-
-        backgroundAudioValue.Stop();
         uiPauseButton.SetActive(false);
         uiLevelPanel.SetActive(false);
         yield return new WaitForSeconds(1f);
         uiGameOverPanel.SetActive(true);
-        loseAudioValue.Play();
         Time.timeScale = 0;
         playfabsManager.SendLeaderBoard(PlayfabsManager.bestvalueAccount);
-        //advsManager.PlayTheAds();
+        if (PlayerPrefs.GetInt("AudioValue") == 1)
+        {
+            backgroundAudioValue.Play();
+            loseAudioValue.Play();
+        }
+        else
+        {
+            backgroundAudioValue.Stop();
+        }
     }
 
-  
     #endregion
 }

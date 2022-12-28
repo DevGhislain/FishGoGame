@@ -146,7 +146,14 @@ public class CharacterBehaviour : MonoBehaviour
    public void JumpCharacter(float _valueJumpe)
     {
         // play the audio sound for the Jump
-        jumpAudioValue.Play(0);
+        if (PlayerPrefs.GetInt("AudioValue") == 1)
+        {
+            jumpAudioValue.Play();
+        }
+        else
+        {
+            jumpAudioValue.Stop();
+        }
 
         rigidbody2D.velocity += new Vector2(0, _valueJumpe);
         IsGrounded = false;

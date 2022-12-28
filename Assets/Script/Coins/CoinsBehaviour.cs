@@ -89,8 +89,15 @@ public class CoinsBehaviour : MonoBehaviour
         {
 
             // play the audio sound for the Coins
-            coinsAudioValue.Play(0);
-
+            if (PlayerPrefs.GetInt("AudioValue") == 1)
+            {
+                coinsAudioValue.Play();
+            }
+            else
+            {
+                coinsAudioValue.Stop();
+            }
+       
            coinsValue = int.Parse(UICoinsValueText.text) + valueOfCoins;
             PlayerPrefs.SetInt("CoinsAmount", coinsValue);
             UICoinsValueText.text = coinsValue.ToString();
