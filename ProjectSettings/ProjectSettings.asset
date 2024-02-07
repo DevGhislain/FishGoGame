@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DevGhislain
-  productName: FishRun
+  companyName: Dev Ghislain
+  productName: FishGoGame
   defaultCursor: {fileID: 2800000, guid: 3adefd98b9ea24e71a446c953b1d0d0a, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -155,16 +155,16 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DevGhislain.FishRun
+    Android: com.DevGhislain.FishGoGame
     Standalone: com.DevGhislain.FishRun
     iPhone: com.DevGhislain.FishRun
   buildNumber:
     Standalone: 0
     iPhone: 0
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 0
+  overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 29
+  AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -251,7 +251,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{inproject}: KeyForBundleGo.keystore'
+  AndroidKeystoreName: /Users/ghislaindev/Game Project/Git Project/CleeFishGoGame/user.keystore
   AndroidKeyaliasName: devghislain
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
@@ -855,6 +855,11 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 1
+    Collab: 0
+    Game Performance: 0
+    Purchasing: 0
+    UDP: 0
     Unity Ads: 1
   luminIcon:
     m_Name: 
@@ -869,10 +874,10 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 39ae3a4a-1e33-467c-8a93-470af880d411
+  cloudProjectId: 5d8e94c4-a9df-4cdd-9f4e-8b73915bdc8b
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: BubbleGo
+  projectName: FishGoGame
   organizationId: zanzeghislain1
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
