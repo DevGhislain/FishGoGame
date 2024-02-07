@@ -1,2 +1,2 @@
 # BubbleGo
-My first Game BubbleGo 
+My first Game Fish go Game
